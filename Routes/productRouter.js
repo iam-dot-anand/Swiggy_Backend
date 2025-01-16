@@ -9,12 +9,12 @@ router.get("/get", authMiddleware, (req, res) => {
   console.log("------> Logged In User Details:", req.user);
   res.status(200).json([
     {
-      name: "Mobile",
-      price: "10000",
+      name: "Pizza",
+      price: "500",
     },
     {
-      name: "Laptop",
-      price: "50000",
+      name: "Burgur",
+      price: "100", 
     },
   ]);
 });
