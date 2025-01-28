@@ -11,8 +11,7 @@ const app = express();
 const PORT=process.env.PORT || 4000;
 
 // MongoDB Connection
-// connectMongoDB('mongodb://127.0.0.1:27017/swiggyDB')
-connectMongoDB(process.env.MONGO_URL)
+connectMongoDB('mongodb+srv://kr:krishna123@swiggy-db.lp3w8.mongodb.net/?retryWrites=true&w=majority&appName=swiggy-db',{ useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.log("Error in MongoDB: " + err));
 
@@ -26,5 +25,5 @@ app.use('/product', product);
 app.use('/restaurant', restaurant);
 
 app.listen(PORT, () => {
-  console.log("Server is started! at http://localhost:4000");
+  console.log(`Server is started! at http://localhost:${PORT}`);
 });
